@@ -1,4 +1,4 @@
-package org.burgeon.aero.us.adapter.config;
+package org.burgeon.aero.as.adapter.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package org.burgeon.aero.us;
+package org.burgeon.aero.as;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
