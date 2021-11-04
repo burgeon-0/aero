@@ -1,5 +1,6 @@
 package org.burgeon.aero.us.adapter.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * @author Sam Lu
  * @date 2021/11/3
  */
+@Slf4j
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -23,9 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .permitAll()
-                .and()
-                .logout()
                 .permitAll();
     }
 
