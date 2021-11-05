@@ -21,12 +21,12 @@ public class LogoutController {
 
     @GetMapping("/logout")
     public RedirectView logout(HttpServletRequest request, HttpServletResponse response,
-                               Authentication authentication) {
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+                               Authentication auth) {
+        UserDetails userDetails = (UserDetails) auth.getPrincipal();
         log.info("User[{}] Logout", userDetails.getUsername());
 
         SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
-        logoutHandler.logout(request, response, authentication);
+        logoutHandler.logout(request, response, auth);
         return new RedirectView("/login");
     }
 
