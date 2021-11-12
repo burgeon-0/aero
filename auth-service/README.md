@@ -1,7 +1,6 @@
 # 技术栈
 
 1. [Spring Boot](https://spring.io/projects/spring-boot) (2.5.5)
-2. [Vaadin](https://vaadin.com)
 
 # 参考资料
 
