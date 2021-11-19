@@ -32,15 +32,37 @@
         return url.substring(0, url.length - 1);
     };
 
+    var addUrlParameter = function addUrlParameter(url, sParamName, sParamValue) {
+        if (url) {
+            if (url.includes("?")) {
+                url = url + "&" + sParamName + "=" + sParamValue;
+            } else {
+                url = url + "?" + sParamName + "=" + sParamValue;
+            }
+        }
+        return url;
+    };
+
     var error = getUrlParameter("error");
     if (error) {
         $(".login-form .error-message > span").html("账号或密码错误");
         $(".login-form .error-message").show();
     }
+    var force = getUrlParameter("force");
+    if (force) {
+        if (force === "username") {
+            $("#username").focus();
+        } else if (force === "password") {
+            $("#password").focus();
+        }
+    }
+
     $("#username").focus(function () {
         var error = getUrlParameter("error");
         if (error) {
-            window.location = removeUrlParameter("error");
+            var url = removeUrlParameter("error");
+            url = addUrlParameter(url, "force", "username");
+            window.location = url;
         } else {
             $(".login-form .error-message").hide();
         }
@@ -48,7 +70,9 @@
     $("#password").focus(function () {
         var error = getUrlParameter("error");
         if (error) {
-            window.location = removeUrlParameter("error");
+            var url = removeUrlParameter("error");
+            url = addUrlParameter(url, "force", "password");
+            window.location = url;
         } else {
             $(".login-form .error-message").hide();
         }
@@ -67,6 +91,8 @@
             event.preventDefault();
             return;
         }
+
+        $("#password").val(sha256($("#password").val()));
     });
 
 })(jQuery);

@@ -8,3 +8,4 @@
 2. [Spring Security Form Login](https://www.baeldung.com/spring-security-login)
 3. [Custom Login Form in Spring Security](https://springhow.com/custom-form-login-in-spring-security)
 4. [Logout in Spring Boot](https://ducmanhphan.github.io/2019-02-22-Logout-in-Spring-Boot)
+5. [Password Encoder Migration With Spring Security 5](https://dzone.com/articles/password-encoder-migration-with-spring-security-5)
