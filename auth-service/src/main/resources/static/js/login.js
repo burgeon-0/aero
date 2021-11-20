@@ -48,11 +48,11 @@
         $(".login-form .error-message > span").html("账号或密码错误");
         $(".login-form .error-message").show();
     }
-    var force = getUrlParameter("force");
-    if (force) {
-        if (force === "username") {
+    var focus = getUrlParameter("focus");
+    if (focus) {
+        if (focus === "username") {
             $("#username").focus();
-        } else if (force === "password") {
+        } else if (focus === "password") {
             $("#password").focus();
         }
     }
@@ -61,7 +61,7 @@
         var error = getUrlParameter("error");
         if (error) {
             var url = removeUrlParameter("error");
-            url = addUrlParameter(url, "force", "username");
+            url = addUrlParameter(url, "focus", "username");
             window.location = url;
         } else {
             $(".login-form .error-message").hide();
@@ -71,7 +71,7 @@
         var error = getUrlParameter("error");
         if (error) {
             var url = removeUrlParameter("error");
-            url = addUrlParameter(url, "force", "password");
+            url = addUrlParameter(url, "focus", "password");
             window.location = url;
         } else {
             $(".login-form .error-message").hide();
