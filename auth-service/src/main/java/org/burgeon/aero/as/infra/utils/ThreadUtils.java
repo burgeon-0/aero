@@ -1,4 +1,4 @@
-package org.burgeon.aero.as.infra;
+package org.burgeon.aero.as.infra.utils;
 
 /**
  * @author Sam Lu

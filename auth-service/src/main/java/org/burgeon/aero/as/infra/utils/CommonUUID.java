@@ -1,4 +1,4 @@
-package org.burgeon.aero.as.infra;
+package org.burgeon.aero.as.infra.utils;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

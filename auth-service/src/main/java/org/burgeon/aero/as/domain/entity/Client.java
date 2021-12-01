@@ -1,5 +1,6 @@
 package org.burgeon.aero.as.domain.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
  * @author Sam Lu
  * @date 2021/11/23
  */
+@Data
 @Entity
 @Table(name = "t_client")
 public class Client {

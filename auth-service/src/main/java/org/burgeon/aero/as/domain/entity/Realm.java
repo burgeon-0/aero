@@ -1,5 +1,6 @@
 package org.burgeon.aero.as.domain.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,6 +11,7 @@ import java.util.Date;
  * @author Sam Lu
  * @date 2021/11/23
  */
+@Data
 @Entity
 @Table(name = "t_realm")
 public class Realm {
