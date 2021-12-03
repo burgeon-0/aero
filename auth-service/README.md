@@ -12,7 +12,10 @@
 3. [Spring Data JPA](https://spring.io/projects/spring-data-jpa) (2.5.5)
 4. [Hibernate](https://hibernate.org) (5.4.32)
 5. [Apollo](https://github.com/apolloconfig/apollo) (1.9.0)
-6. [MySQL](https://www.mysql.com/cn)
+6. [MySQL](https://www.mysql.com/cn) (5.7.30)
+7. [Redis](https://redis.io) (6.2.5)
+8. [Redisson](https://redisson.org) (3.16.0)
+9. [Lombok](https://projectlombok.org) (1.18.22)
 
 ## 参考资料
 
@@ -25,3 +28,4 @@
 7. [Guide to UUID in Java](https://www.baeldung.com/java-uuid)
 8. [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql)
 9. [MySQL Configuration Properties](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference-configuration-properties.html)
+10. [Spring Data Redis’s Property-Based Configuration](https://www.baeldung.com/spring-data-redis-properties)

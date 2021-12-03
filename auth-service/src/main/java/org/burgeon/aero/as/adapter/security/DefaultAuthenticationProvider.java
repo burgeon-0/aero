@@ -1,7 +1,7 @@
 package org.burgeon.aero.as.adapter.security;
 
 import lombok.extern.slf4j.Slf4j;
-import org.burgeon.aero.as.app.AccountService;
+import org.burgeon.aero.as.app.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

@@ -6,6 +6,8 @@ package org.burgeon.aero.as.infra;
  */
 public class Constants {
 
+    public static final String REDIS_KEY_PREFIX = "org.burgeon.aero.as:";
+
     public static final String DEFAULT_REALM_NAME = "default";
 
 }
