@@ -11479,7 +11479,7 @@ h1, h2, h3, h4, h5,
 }
 
 .form-control {
-    height: 52px;
+    height: 46px;
     background: #fff;
     color: #000;
     font-size: 16px;
@@ -11573,7 +11573,7 @@ textarea.form-control {
     border-radius: 40px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .btn:hover, .btn:active, .btn:focus {
