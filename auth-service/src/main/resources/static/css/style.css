@@ -11604,6 +11604,6 @@ textarea.form-control {
     color: #fff;
 }
 
-.login-form .error-message {
+.login-form .error-message, .register-form .error-message {
     display: none;
 }

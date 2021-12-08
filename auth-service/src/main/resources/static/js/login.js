@@ -16,79 +16,30 @@
         }
     };
 
-    var removeUrlParameter = function removeUrlParameter(sParam) {
-        var url = window.location.href.split("?")[0] + "?";
-        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-            sURLVariables = sPageURL.split("&"),
-            sParameterName,
-            i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split("=");
-            if (sParameterName[0] != sParam) {
-                url = url + sParameterName[0] + "=" + sParameterName[1] + "&"
-            }
-        }
-        return url.substring(0, url.length - 1);
-    };
-
-    var addUrlParameter = function addUrlParameter(url, sParamName, sParamValue) {
-        if (url) {
-            if (url.includes("?")) {
-                url = url + "&" + sParamName + "=" + sParamValue;
-            } else {
-                url = url + "?" + sParamName + "=" + sParamValue;
-            }
-        }
-        return url;
+    var showErrorAndPreventDefault = function showErrorAndPreventDefault(event, errMsg) {
+        $(".login-form .error-message > span").html(errMsg);
+        $(".login-form .error-message").show();
+        event.preventDefault();
     };
 
     var error = getUrlParameter("error");
-    if (error) {
+    var reloaded = performance.getEntriesByType("navigation")[0].type == "reload";
+    if (error && !reloaded) {
         $(".login-form .error-message > span").html("账号或密码错误");
         $(".login-form .error-message").show();
     }
-    var focus = getUrlParameter("focus");
-    if (focus) {
-        if (focus === "username") {
-            $("#username").focus();
-        } else if (focus === "password") {
-            $("#password").focus();
-        }
-    }
 
-    $("#username").focus(function () {
-        var error = getUrlParameter("error");
-        if (error) {
-            var url = removeUrlParameter("error");
-            url = addUrlParameter(url, "focus", "username");
-            window.location = url;
-        } else {
-            $(".login-form .error-message").hide();
-        }
-    });
-    $("#password").focus(function () {
-        var error = getUrlParameter("error");
-        if (error) {
-            var url = removeUrlParameter("error");
-            url = addUrlParameter(url, "focus", "password");
-            window.location = url;
-        } else {
-            $(".login-form .error-message").hide();
-        }
+    $("#username, #password").focus(function () {
+        $(".login-form .error-message").hide();
     });
 
     $("form").submit(function (event) {
         if ($("#username").val() === "") {
-            $(".login-form .error-message > span").html("请输入账号");
-            $(".login-form .error-message").show();
-            event.preventDefault();
+            showErrorAndPreventDefault(event, "请输入账号");
             return;
         }
         if ($("#password").val() === "") {
-            $(".login-form .error-message > span").html("请输入密码");
-            $(".login-form .error-message").show();
-            event.preventDefault();
+            showErrorAndPreventDefault(event, "请输入密码");
             return;
         }
 
