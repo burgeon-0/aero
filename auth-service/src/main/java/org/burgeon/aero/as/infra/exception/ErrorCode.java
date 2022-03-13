@@ -9,9 +9,17 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
 
     /**
+     * Param Invalid
+     */
+    PARAM_INVALID(HttpStatus.BAD_REQUEST, 4001000, "Param Invalid"),
+    /**
      * Username Or Password Error
      */
-    USERNAME_OR_PASSWORD_ERROR(HttpStatus.UNAUTHORIZED, 4010000, "Username Or Password Error");
+    USERNAME_OR_PASSWORD_ERROR(HttpStatus.UNAUTHORIZED, 4011001, "Username Or Password Error"),
+    /**
+     * Internal Server Error
+     */
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 5001000, "Internal Server Error");
 
     ErrorCode(HttpStatus status, int code, String message) {
         this.status = status;

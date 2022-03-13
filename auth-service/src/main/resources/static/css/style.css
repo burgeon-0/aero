@@ -11607,3 +11607,13 @@ textarea.form-control {
 .login-form .error-message, .register-form .error-message {
     display: none;
 }
+
+.register-form .get-code {
+    margin-left: 15px;
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.register-form .get-code-error-message {
+    display: none;
+}

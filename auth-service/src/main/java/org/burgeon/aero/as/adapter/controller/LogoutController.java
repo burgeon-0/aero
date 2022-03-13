@@ -23,7 +23,7 @@ public class LogoutController {
     public RedirectView logout(HttpServletRequest request, HttpServletResponse response,
                                Authentication auth) {
         UserDetails userDetails = (UserDetails) auth.getPrincipal();
-        log.info("User logout, username: {}", userDetails.getUsername());
+        log.info("User Logout, Username: {}", userDetails.getUsername());
 
         SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
         logoutHandler.logout(request, response, auth);

@@ -26,14 +26,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/css/**", "/fonts/**", "/images/**", "/js/**",
-                        "/login*", "/register*", "/forget-password*")
+                        "/login*", "/register*", "/forget-password*", "/cgi/**")
                 .permitAll()
-                .anyRequest()
-                .authenticated()
+                .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
+                .formLogin().loginPage("/login").permitAll()
+                .and()
+                .csrf().disable();
     }
 
     @Override

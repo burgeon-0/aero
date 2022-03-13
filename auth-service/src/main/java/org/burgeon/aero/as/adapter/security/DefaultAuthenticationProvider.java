@@ -27,15 +27,15 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
         String username = auth.getName();
         String password = auth.getCredentials().toString();
 
-        log.info("User login, username: {}, password: {}", username, password);
+        log.debug("User Login, Username: {}, Password: {}", username, password);
         try {
             accountService.login(username, password);
-            log.info("User login success, username: {}", username);
+            log.info("User Login Success, Username: {}", username);
             return new UsernamePasswordAuthenticationToken(username, password,
                     AuthorityUtils.createAuthorityList("ROLE_USER"));
         } catch (Exception e) {
-            log.info("User login fail, username: {}", username);
-            throw new BadCredentialsException("External system authentication failed");
+            log.info("User Login Fail, Username: {}", username);
+            throw new BadCredentialsException("External System Authentication Failed");
         }
     }
 

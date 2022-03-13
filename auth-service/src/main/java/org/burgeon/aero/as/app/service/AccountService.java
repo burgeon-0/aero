@@ -53,7 +53,7 @@ public class AccountService {
         UUID userId = account.getUserId();
         Optional<User> userOptional = userRepository.findById(userId);
         if (!userOptional.isPresent()) {
-            log.warn("Abnormal Account Data, username: {}", username);
+            log.warn("Abnormal Account Data, Username: {}", username);
             throw new RestException(ErrorCode.USERNAME_OR_PASSWORD_ERROR);
         }
 

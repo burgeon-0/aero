@@ -6,9 +6,21 @@ package org.burgeon.aero.as.domain.enums;
  */
 public enum AccountType {
 
+    /**
+     * 手机账号
+     */
     MOBILE,
+    /**
+     * 邮箱账号
+     */
     EMAIL,
-    USERNAME,
+    /**
+     * 普通账号
+     */
+    COMMON,
+    /**
+     * 微信账号
+     */
     WEIXIN
 
 }
