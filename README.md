@@ -7,3 +7,4 @@ Something useful.
 - [tool.lu/favicon](https://tool.lu/favicon)
 - [中国色](http://zhongguose.com)
 - [shields.io](https://shields.io/)
+- [pdf-to-svg](https://tools.pdf24.org/zh/pdf-to-svg)
